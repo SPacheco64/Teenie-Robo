@@ -1,0 +1,169 @@
+/* Developed by Sergio Pacheco (June 2021) */
+/* Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+/* Basic SCSS Style Variables */
+body {
+  margin: 0 auto;
+  background-color: #bab6b3;
+  font-family: "VT323", monospace;
+}
+
+* {
+  caret-color: transparent;
+}
+
+h1 {
+  margin: 10px 0;
+  font-family: "VT323", monospace;
+  font-size: 60px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Styling for Game Screen Dispplay - START */
+.gameArea {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  width: 500px;
+  height: 450px;
+  background: url("../images/png/gamebg.png");
+  overflow: hidden;
+  z-index: -1;
+  border: 20px solid #52525c;
+  border-radius: 15px;
+}
+
+.timeLeft {
+  position: absolute;
+  display: block;
+  margin: 10px auto;
+  z-index: 2;
+  text-align: right;
+  left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #081820;
+}
+
+.scoreTitle {
+  position: absolute;
+  display: block;
+  margin: 10px auto;
+  z-index: 2;
+  text-align: right;
+  right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #081820;
+}
+
+/* Styling for Game Screen Dispplay - END */
+.swal2-popup {
+  font-family: "VT323", monospace;
+  background-color: #081820;
+}
+
+.swal2-title {
+  font-size: 30px;
+  color: #fff;
+}
+
+.swal2-popup .swal2-content {
+  line-height: 24px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.swal2-styled.swal2-confirm {
+  font-family: "VT323", monospace;
+  font-size: 28px;
+}
+
+.item {
+  position: absolute;
+  display: block;
+}
+
+/* Styling for In-Game Assets - START */
+.batteryAreaOne, .batteryAreaTwo, .batteryAreaThree, .clockArea, .batteryHeightOne, .batteryHeightTwo, .batteryHeightThree,
+.clockHeight {
+  position: absolute;
+  margin: 0 auto;
+}
+
+.batteryAreaOne {
+  left: 410px;
+  top: -90px;
+}
+
+.batteryAreaTwo {
+  left: 10px;
+  top: -270px;
+}
+
+.batteryAreaThree {
+  left: 110px;
+  top: -420px;
+}
+
+.batteryHeightOne, .batteryHeightTwo, .batteryHeightThree {
+  width: 20px;
+  height: 40px;
+}
+
+.clockArea {
+  left: 320px;
+  top: -600px;
+}
+
+.clockArea .clockHeight {
+  width: 45px;
+  height: 45px;
+}
+
+.roboArea {
+  position: absolute;
+  margin: 0 auto;
+  width: 20px;
+  left: 235px;
+  top: 400px;
+}
+
+.roboArea .teenieRobo {
+  position: absolute;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+.roboArea .roboHeight {
+  position: absolute;
+  margin: 0 auto;
+  width: 56px;
+  height: 56px;
+}
+
+/* Styling for In-Game Assets - END */
+footer {
+  background: #52525c;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  position: static;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #e0f8d0;
+}
+
+footer a:hover {
+  color: #fff;
+}
