@@ -1,0 +1,184 @@
+/* Developed by Sergio Pacheco (June 2021) */
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Basic SCSS Style Variables */
+$primary-font: 'VT323', monospace;
+$light-gray: #bab6b3;
+$dark-gray: #52525c;
+$dark-color: #081820;
+$white-color: #fff;
+$game-green: #e0f8d0;
+
+body 
+{
+    margin: 0 auto;
+    background-color: $light-gray;
+    font-family: $primary-font;
+}
+*{ caret-color: transparent; }
+h1 
+{
+    margin: 10px 0;
+    font-family: $primary-font;
+    font-size: 60px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    font-weight: bold;
+    color: $white-color;
+}
+
+/* Styling for Game Screen Dispplay - START */
+.gameArea 
+{
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    width: 500px;
+    height: 450px;
+    background: url('../images/png/gamebg.png');
+    overflow: hidden;
+    z-index: -1;
+    border: 20px solid $dark-gray;
+    border-radius: 15px;
+}
+.timeLeft 
+{
+    position: absolute;
+    display: block;
+    margin: 10px auto;
+    z-index: 2;
+    text-align: right;
+    left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: $dark-color;
+}
+.scoreTitle 
+{
+    position: absolute;
+    display: block;
+    margin: 10px auto;
+    z-index: 2;
+    text-align: right;
+    right: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: $dark-color;
+}
+/* Styling for Game Screen Dispplay - END */
+
+// Styling for Sweet Alert Pop-up
+.swal2-popup
+{
+    font-family: $primary-font;
+    background-color: $dark-color;
+}
+.swal2-title
+{
+    font-size: 30px;
+    color: $white-color;
+}
+.swal2-popup .swal2-content 
+{
+    line-height: 24px;
+    font-size: 20px;
+    color: $white-color;
+}
+.swal2-styled.swal2-confirm
+{
+    font-family: $primary-font;
+    font-size: 28px;
+}
+
+.item 
+{
+    position: absolute;
+    display: block;
+}
+
+/* Styling for In-Game Assets - START */
+.batteryAreaOne, .batteryAreaTwo, .batteryAreaThree, .clockArea, .batteryHeightOne, .batteryHeightTwo, .batteryHeightThree,
+.clockHeight
+{
+    position: absolute;
+    margin: 0 auto;
+}
+.batteryAreaOne 
+{
+    left: 410px;
+    top: -90px;
+}
+.batteryAreaTwo 
+{
+    left: 10px;
+    top: -270px;
+}
+.batteryAreaThree 
+{
+    left: 110px;
+    top: -420px;
+}
+.batteryHeightOne, .batteryHeightTwo, .batteryHeightThree
+{
+    width: 20px;
+    height: 40px;
+}
+.clockArea 
+{
+    left: 320px;
+    top: -600px;
+
+    .clockHeight
+    {
+        width: 45px;
+        height: 45px;    
+    }
+}
+.roboArea 
+{
+    position: absolute;
+    margin: 0 auto;
+    width: 20px;
+    left: 235px;
+    top: 400px;
+
+    .teenieRobo 
+    {
+        position: absolute;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+    }
+
+    .roboHeight 
+    {
+        position: absolute;
+        margin: 0 auto;
+        width: 56px;
+        height: 56px;
+    }
+}
+/* Styling for In-Game Assets - END */
+
+footer
+{
+    background: $dark-gray; 
+    padding: 2rem; 
+    text-align: center; 
+    color: $white-color; 
+    font-size: 28px; 
+    position: static; 
+    bottom: 0; 
+    width: 100%;
+
+    a 
+    { 
+        color: $game-green; 
+    }
+
+    a:hover{ color: $white-color; }
+}
