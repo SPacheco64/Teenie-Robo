@@ -1,0 +1,80 @@
+<!-- 
+- Game Designed & Developed by Sergio Pacheco (June 2021) -
+- Art Assets have been created by myself (Sergio) -
+- Music and Sound Effects found here: https://opengameart.org/ -
+-->
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <meta http-equiv = "X-UA-Compatible" content = "ie = edge">
+        <link rel = "stylesheet" href = "styles/style.css">
+
+        <!-- Sweet Alert 2 Script - Used for Responsive & Customizable Pop-ups -->
+        <script src = "https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+        <title>Teenie-Robo</title>
+
+        <!-- Custom Game CSS -->
+        <link rel = "stylesheet" href = "css/teenie-robo-styling.css">
+    </head>
+    
+    <body>
+        <h1>TEENIE-ROBO</h1>
+        <!-- The Game Screen where the game is played -->
+        <div id = "gameArea" class = "gameArea">
+            <p class = "timeLeft">TIME: <span id = "timeLeft">100</span></p>
+            <p class = "scoreTitle">SCORE: <span id = "scoreCounter">0</span></p>
+        
+            <!-- Collectible Items - START -->
+            <div class = "batteryAreaOne"  id = "item1">
+                <div class = "batteryHeightOne">
+                    <img id = "item" class = "item" src="images/png/batterySprite.png" alt = "A Battery">
+                </div>
+            </div>
+            <div id = "item2" class = "batteryAreaTwo">
+                <div class = "batteryHeightTwo">
+                    <img id = "item" class = "item" src = "images/png/batterySprite.png" alt = "A Battery">
+                </div>
+            </div>
+            <div id = "item3" class = "batteryAreaThree">
+                <div class = "batteryHeightThree">
+                    <img id = "item" class = "item" src = "images/png/batterySprite.png" alt = "A Battery">
+                </div>
+            </div>
+            <div id = "item4" class = "clockArea">
+                <div class = "clockHeight">
+                    <img id = "item" class = "item" src = "images/png/clockSprite.png" alt = "A Clock">
+                </div>
+            </div>
+            <!-- Collectible Items - END -->
+        
+            <!-- Player Object (Teenie-Robo) -->
+            <div id = "roboArea" class = "roboArea">
+                <div class = "roboHeight">
+                    <img id = "teenieRobo" class = "teenieRobo" src = "images/gif/haro-robo-gb-lg.gif" alt = "Teenie-Robo">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Audio Assets -->
+        <audio id = "bgMusic" src = "sound-effects/bg-music.ogg"></audio>
+        <audio id = "getBattery" src="sound-effects/battery-get.wav"></audio>
+        <audio id = "getClock" src="sound-effects/clock-get.wav"></audio>
+        <audio id = "timeUp" src="sound-effects/time-up.wav"></audio>
+    
+
+        <!-- JQuery Include -->
+        <script src = "https://code.jquery.com/jquery-3.4.1.js" integrity = "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin = "anonymous"></script>
+        
+        <!-- Game JS Code -->
+        <script src = "js/teenie-robo-js.js"></script>
+
+        <!--
+            <footer>
+                Teenie-Robo was developed by <a href = "portfolio-page.html">Sergio Pacheco</a>
+            </footer>
+        -->
+    </body>
+</html>
