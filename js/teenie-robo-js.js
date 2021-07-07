@@ -255,7 +255,7 @@ $(function ()
                 // Places an Object at a new, random location horizontally on screen
                 if (screen.width < 768) 
                 {
-                    let randomPosition = parseInt(Math.random() * 250) + 10;
+                    let randomPosition = parseInt(Math.random() * 240) + 10;
                     item.css('left', randomPosition);
                 }
                 else
@@ -269,23 +269,58 @@ $(function ()
             // Speed at which new items fall increases as the Player's score increases
             if (totalScore >= 100) 
             {
-                item.css('top', topOfArea + 7);
+                if(screen.width < 768)
+                {
+                    item.css('top', topOfArea + 6); 
+                }
+                else
+                {
+                    item.css('top', topOfArea + 7);
+                }
             } 
             else if (totalScore >= 75) 
             {
-                item.css('top', topOfArea + 6);
+                if(screen.width < 768)
+                {
+                    item.css('top', topOfArea + 5); 
+                }
+                else
+                {
+                    item.css('top', topOfArea + 6);
+                }
             } 
             else if (totalScore >= 50) 
             {
-                item.css('top', topOfArea + 5);
+                if(screen.width < 768)
+                {
+                    item.css('top', topOfArea + 4); 
+                }
+                else
+                {
+                    item.css('top', topOfArea + 5);
+                }
             } 
             else if (totalScore >= 25)
             {
-                item.css('top', topOfArea + 4);
+                if(screen.width < 768)
+                {
+                    item.css('top', topOfArea + 3); 
+                }
+                else
+                {
+                    item.css('top', topOfArea + 4);
+                }
             } 
             else
             {
-                item.css('top', topOfArea + 3);
+                if(screen.width < 768)
+                {
+                    item.css('top', topOfArea + 2); 
+                }
+                else
+                {
+                    item.css('top', topOfArea + 3);
+                }
             }
         }
 
