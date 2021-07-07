@@ -85,11 +85,11 @@ $(function ()
             let touchX = e.touches[0].clientX;
             if (gameOver === false) 
             {
-                if (touchX > touchWidth / 2 && moveLeft === false) 
+                if (touchX > touchWidth / 2) 
                 {
                     moveRight = requestAnimationFrame(right);
                 } 
-                else if (moveRight === false) 
+                else
                 {
                     moveLeft = requestAnimationFrame(left);
                 }
