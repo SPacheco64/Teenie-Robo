@@ -253,8 +253,17 @@ $(function ()
                     topOfArea = -150;
                 }
                 // Places an Object at a new, random location horizontally on screen
-                let randomPosition = parseInt(Math.random() * 440) + 10;
-                item.css('left', randomPosition);
+                if (screen.width < 768) 
+                {
+                    let randomPosition = parseInt(Math.random() * 250) + 10;
+                    item.css('left', randomPosition);
+                }
+                else
+                {
+                    let randomPosition = parseInt(Math.random() * 440) + 10;
+                    item.css('left', randomPosition);
+                }
+                
             }
 
             // Speed at which new items fall increases as the Player's score increases
