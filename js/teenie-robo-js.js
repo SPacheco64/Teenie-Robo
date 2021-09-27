@@ -241,7 +241,7 @@ $(function ()
         function itemFalling(item) 
         {
             let topOfArea = parseInt(item.css('top'));
-            if (topOfArea >= parseInt($('.gameArea').css('height')) - 40 && screen.width >= 768) 
+            if (topOfArea >= parseInt($('.gameArea').css('height')) - 45 && screen.width >= 768) 
             {
                 // Sets an Object back after leaving the screen, so that it can fall again
                 if (item.hasClass('clockArea'))
