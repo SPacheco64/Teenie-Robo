@@ -241,7 +241,7 @@ $(function ()
         function itemFalling(item) 
         {
             let topOfArea = parseInt(item.css('top'));
-            if (topOfArea > parseInt($('.gameArea').css('height'))) 
+            if (topOfArea >= parseInt($('.gameArea').css('height')) - 40 && screen.width >= 768) 
             {
                 // Sets an Object back after leaving the screen, so that it can fall again
                 if (item.hasClass('clockArea'))
@@ -253,18 +253,25 @@ $(function ()
                     topOfArea = -150;
                 }
                 // Places an Object at a new, random location horizontally on screen
-                if (screen.width < 768) 
+                let randomPosition = parseInt(Math.random() * 440) + 10;
+                item.css('left', randomPosition);
+                
+            }
+            else if (topOfArea >= parseInt($('.gameArea').css('height')) - 25 && screen.width < 768)
+            {
+                // Sets an Object back after leaving the screen, so that it can fall again
+                if (item.hasClass('clockArea'))
                 {
-                    let randomPosition = parseInt(Math.random() * 240) + 10;
-                    item.css('left', randomPosition);
+                    topOfArea = -1000; 
                 }
                 else
                 {
-                    let randomPosition = parseInt(Math.random() * 440) + 10;
-                    item.css('left', randomPosition);
+                    topOfArea = -150;
                 }
-                
-            }
+                // Places an Object at a new, random location horizontally on screen
+                let randomPosition = parseInt(Math.random() * 240) + 10;
+                item.css('left', randomPosition);
+            } 
 
             // Speed at which new items fall increases as the Player's score increases
             if (totalScore >= 100) 
