@@ -1,257 +1,573 @@
-/* Developed by Sergio Pacheco (June 2021) */
+/* Sergio Pacheco - Portfolio Site Styling */
 
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
 
 /* Basic SCSS Style Variables */
-$primary-font: 'VT323', monospace;
-$light-gray: #bab6b3;
-$dark-gray: #52525c;
-$dark-color: #081820;
-$white-color: #fff;
-$game-green: #e0f8d0;
+$primary-font: 'Helvetica', sans-serif;
+$secondary-font: 'Karla';
+$label-font: 'Sarabun', sans-serif;
+$body-color: #0c171f;
+$primary-color: #1e8dd1;
+$secondary-color: #4DA8DA;
+$darkened-color: #161718;
+$primary-text: #1e8dd1;
+$secondary-text: #4DA8DA;
+$white-text: #fff;
+$off-white: #F5F5EE;
+$overlay-color: rgba(0, 0, 0, 0.8);
 
-body 
+/* Animation CSS (using AOS animation library) */
+[aos = "fade"] 
 {
-    margin: 0 auto;
-    background-color: $light-gray;
-    font-family: $primary-font;
+    opacity: 0;
+    transition-property: opacity;
 }
-*{ caret-color: transparent; }
-h1 
+[aos = "fade"].aos-animate 
 {
-    margin: 10px 0;
-    font-family: $primary-font;
-    font-size: 60px;
-    letter-spacing: 1.5px;
-    text-align: center;
-    font-weight: bold;
-    color: $white-color;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    opacity: 1;
 }
 
-/* Styling for Game Screen Dispplay - START */
-.gameArea 
+html{ scroll-behavior: smooth; }
+body /* CSS for the page body */
 {
-    position: relative;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    width: 300px;
-    height: 265px;
-    background: url('../images/png/gamebg.png');
-    background-size: contain;
-    overflow: hidden;
-    z-index: -1;
-    border: 20px solid $dark-gray;
-    border-radius: 15px;
-}
-.timeLeft 
-{
-    position: absolute;
-    display: block;
-    margin: 10px auto;
-    z-index: 2;
-    text-align: right;
-    left: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    color: $dark-color;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-.scoreTitle 
-{
-    position: absolute;
-    display: block;
-    margin: 10px auto;
-    z-index: 2;
-    text-align: right;
-    right: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    color: $dark-color;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-/* Styling for Game Screen Dispplay - END */
+    font-family: $secondary-font;
+    background: $body-color;
+    font-size: 1.2rem;
+    color: $white-text;
 
-// Styling for Sweet Alert Pop-up
-.swal2-popup
-{
-    font-family: $primary-font;
-    background-color: $dark-color;
-
-    .swal2-title
-    {
-        font-size: 30px;
-        color: $white-color;
-    }
-    .swal2-content 
-    {
-        line-height: 24px;
-        font-size: 20px;
-        color: $white-color;
-    }
-    .swal2-styled.swal2-confirm
-    {
-        font-family: $primary-font;
-        font-size: 28px;
-    }
+    img, button, .anchor{ caret-color: transparent; }
 }
 
-.item 
-{
-    position: absolute;
-    display: block;
-    width: inherit;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
+a { color: $primary-text; }
+a:hover { color: $secondary-text; text-decoration: none; }
 
-/* Styling for In-Game Assets - START */
-.batteryAreaOne, .batteryAreaTwo, .batteryAreaThree, .clockArea, .batteryHeightOne, .batteryHeightTwo, .batteryHeightThree,
-.clockHeight
+header
 {
-    position: absolute;
-    margin: 0 auto;
+    background: $primary-color;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    height: 5rem;
+    a { color: $white-text; }
 }
-.batteryAreaOne 
-{
-    left: 205px;
-    top: -45px;
-}
-.batteryAreaTwo 
-{
-    left: 10px;
-    top: -135px;
-}
-.batteryAreaThree 
-{
-    left: 55px;
-    top: -210px;
-}
-.batteryHeightOne, .batteryHeightTwo, .batteryHeightThree
-{
-    width: 10px;
-    height: 20px;
-}
-.clockArea 
-{
-    left: 160px;
-    top: -300px;
-
-    .clockHeight
-    {
-        width: 22.5px;
-        height: 22.5px;    
-    }
-}
-.roboArea 
-{
-    position: absolute;
-    margin: 0 auto;
-    width: 10px;
-    left: 117.5px;
-    top: 230px;
-
-    .teenieRobo 
-    {
-        position: absolute;
-        margin: 0 auto;
-        display: block;
-        width: 100%;
-    }
-
-    .roboHeight 
-    {
-        position: absolute;
-        margin: 0 auto;
-        width: 40px;
-        height: 40px;
-    }
-}
-/* Styling for In-Game Assets - END */
 
 footer
 {
-    background: $dark-gray; 
-    padding: 2rem; 
-    text-align: center; 
-    color: $white-color; 
-    font-size: 28px; 
-    position: static; 
-    bottom: 0; 
+    background: $primary-color;
+    color: $white-text;
+    position: static;
     width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 300;  
+    text-align: center;
+    padding: 2rem 0;
+    min-height: 5rem;
+    margin-top: 5rem;
 
-    a 
-    { 
-        color: $game-green; 
-    }
-
-    a:hover{ color: $white-color; }
+    a { color: $white-text; }
+    a i { font-size: 1.5rem; padding: 0 1rem; }
 }
 
-@media (min-width: 768px)
+/* Hamburger Menu Styling - START */
+.bar1, .bar2, .bar3 
 {
-    .gameArea 
+    width: 3rem;
+    height: 0.5rem;
+    background-color: $white-text;
+    margin: .5rem 0;
+    transition: 0.2s;
+    border-radius: 3rem;
+}
+.hamburger.active .bar1 
+{
+    -webkit-transform: rotate(-45deg) translate(-0.7rem, 0.7rem);
+    transform: rotate(-45deg) translate(-0.7rem, 0.7rem);
+    margin-top: .5rem;
+}
+.hamburger.active .bar2 { opacity: 0; }
+.hamburger.active .bar3 
+{
+    -webkit-transform: rotate(45deg) translate(-0.7rem, -0.7rem);
+    transform: rotate(45deg) translate(-0.7rem, -0.7rem);
+}
+.hamburger:focus{ outline: none; }
+/* Hamburger Menu Styling - END */
+
+/* Header Nav CSS - START */
+#siteLogo
+{   
+    max-height: 4rem;
+    border-radius: 1rem;
+}
+#desktopNav{ display: none; }
+#mobileNav
+{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 5rem;
+    background: $primary-color;
+    left: 0px;
+}
+.no-scroll{ overflow: hidden; }
+/* Header Nav CSS - END */
+
+nav /* Nested CSS for Navigation Items */ 
+{
+    .nav-item
     {
-        width: 500px;
-        height: 450px;
+        width: 10rem;
+        margin: 0 auto;
     }
-    .roboArea 
+    a 
+    { 
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+#screenOverlay
+{ 
+    display: none; 
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+#screenOverlay.active{ display: block; }
+#contactAnch, #aboutAnch, #projectsAnch { position: relative; top: -5rem; }
+
+#welcomeSection{ min-height: 90vh; display: flex; }
+#welcomeSection, #clientsSection, #aboutSection, #toolkitSection, #projectsSection, #contactSection{ padding: 5% 10%;}
+.welcome-text{ width: 90%; }
+.welcome-img
+{
+    background: $primary-text;
+    border-radius: 30rem;
+    border: 0.2rem solid $primary-text;
+    max-width: 15rem;
+}
+.resume-btn
+{
+    caret-color: transparent;
+    border: .2rem solid;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin: 1rem 0;
+}
+h1, h2
+{ 
+    color: $primary-text; 
+    font-weight: bold;
+}
+.section-header { margin-bottom: 1rem; }
+.header-subtxt { position: relative; top: -1rem; font-style: italic; font-size: 1rem; }
+#pageContent
+{
+    position: relative;
+    top: 5rem;
+}
+.resume-btn{ text-align: center; }
+.left-content, .right-content{ justify-content: center; }
+.coming-soon
+{
+    max-width: 20rem;
+    height: 20rem;
+    text-align: center;
+    padding: 3rem;
+    background: $secondary-color;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    margin: 1.5rem auto;
+    align-items: center;
+    display: inline-flex;
+}
+.proj-row
+{ 
+    justify-content: space-between; 
+
+    .proj-one, .proj-two, .proj-three, .proj-four
     {
-        width: 20px;
-        left: 235px;
-        top: 400px;
-    
-        .roboHeight 
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 1rem;
+        min-height: 20rem;
+        width: 20rem;
+        overflow: hidden;
+        margin: 1rem auto;
+    }
+    .proj-one
+    { 
+        background-image: url(../images/gif/teenie-robo-screen.gif);
+        background-size: 85%;
+        background-position: center;
+        background-color: #bab6b3;
+    }
+    .proj-two
+    { 
+        background-image: url(../images/png/portfolio-web-screen.PNG); 
+        background-size: 85%;
+        background-position: center;
+        background-color: $primary-color;
+    }
+    .proj-three
+    { 
+        background-image: url(../images/gif/mario.gif);
+        background-size: 70%;
+        background-position: center;
+        background-color: #000;
+    }
+    .proj-four
+    { 
+        background-image: url(../images/png/teenie-robo-screen.PNG);
+        background-size: 70%;
+        background-position: center;
+        background-color: #bab6b3;
+    }
+}
+#projContainerOne, #projContainerTwo, #projContainerThree, #projContainerFour
+{
+    opacity: 0;  
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    cursor: pointer;
+}
+#overlayOne, #overlayTwo, #overlayThree, #overlayFour 
+{
+    opacity: 0;
+    display: none;
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    background-color: $overlay-color;
+    left: 0;
+    text-align: center;
+    padding: 5%;
+
+    &.active 
+    {
+        opacity: 1;
+        display: block;   
+    }
+
+    h2 { color: $white-text; text-transform: uppercase; }
+    p { font-size: 1rem; }
+    .tool
+    {
+        background-color: #1e8dd1;
+        padding: .5rem;
+        border-radius: 1rem;
+        margin-bottom: 3%;
+        margin-right: 1%;
+        width: 20%;
+        display: inline-table;
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    .project-links
+    {
+        margin-top: 1rem;
+        .project-btn
         {
-            width: 56px;
-            height: 56px;
+            background-color: #0c1717;
+            padding: 1rem;
+            border-radius: 5rem;
+            font-size: 1rem;
+
+            &:hover{ background-color: $white-text; }
         }
     }
 
-    .timeLeft, .scoreTitle{ font-size: 25px; }
-    .batteryAreaOne 
+    .close-overlay-one, .close-overlay-two, .close-overlay-three, .close-overlay-four 
     {
-        left: 410px;
-        top: -90px;
+        caret-color: transparent;
+        position: absolute;
+        top: 4%;
+        right: 2%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 200;
+
+        &:hover{ color: $secondary-color; }
     }
-    .batteryAreaTwo 
-    {
-        left: 10px;
-        top: -270px;
+}
+
+#clientsSection
+{
+    background: $secondary-color;
+    border-top: .2rem solid $white-text;
+    border-bottom: .2rem solid $white-text;
+    // margin: 10% 0;
+
+    .section-header
+    { 
+        color: $white-text; 
+        margin-bottom: 2rem;
     }
-    .batteryAreaThree 
+}
+.company-logo
+{ 
+    width: 100%; 
+    margin-bottom: 1rem; 
+    background: $primary-color;
+    border-radius: 5rem;
+    padding: 1rem;
+    border: .2rem solid $off-white;
+}
+.mini-icon
+{
+    max-height: 1.5rem;
+    position: relative;
+    top: -0.25rem;
+}
+.about-img
+{
+    max-width: 80%;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.toolkit-col
+{
+    margin-bottom: 3rem;
+    caret-color: transparent;
+    i
     {
-        left: 110px;
-        top: -420px;
+        font-size: 3rem;
+        color: #4DA8DA;
     }
-    .batteryHeightOne, .batteryHeightTwo, .batteryHeightThree
+}
+.toolkit-icon
+{
+    width: 3rem;
+    min-width: 3rem;
+}
+.toolkit-name
+{
+    position: absolute;
+    bottom: -1.5rem;
+    font-family: $label-font;
+    font-size: 1rem;
+    min-width: 6rem;
+    text-align: center;
+}
+
+
+/* STYLING FOR CONTACT FORM - START */
+#contactSection
+{
+    background: $secondary-color;
+}
+.visuallyHidden:not(:focus):not(:active) 
+{
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    margin: -1rem;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0);
+    overflow: hidden;
+}
+.contact .contactContainer .contactForm input, .contact .contactContainer .contactForm textarea 
+{
+    padding: .4rem;
+    margin: 1rem 0;
+    border: .2rem solid $primary-color;
+    border-radius: .2rem;
+    outline: none;
+}
+.contact .contactContainer 
+{
+    display: flex;
+    justify-content: space-between;
+}
+.contact .contactContainer .contactInformation, .contact .contactContainer form 
+{
+    display: flex;
+    flex-direction: column;
+}
+.contact .contactContainer .contactInformation .socialIcons 
+{ 
+    padding: 0;
+
+    i{ padding: 0 1rem 0 0; font-size: 2rem; }
+    a:hover { color: $white-text; }
+}
+.contact .contactContainer .contactForm button 
+{
+    background-color: $primary-color;
+    border: .2rem solid $primary-color;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    width: auto;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: $white-text;
+    text-transform: uppercase;
+}
+.contact .contactContainer .contactForm button:hover
+{
+    background: $white-text;
+    color: $primary-color;
+    cursor: pointer;
+}
+#message{ max-height: 15rem; min-height: 5rem; }
+.submit-container, .socialIcons{ text-align: center; }
+/* STYLING FOR CONTACT FORM - END */
+
+#scrollToTopBtn
+{
+    display: none;
+    position: fixed;
+    bottom: .5rem;
+    right: .1rem;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $white-text;
+    cursor: pointer;
+    i
     {
-        width: 20px;
-        height: 40px;
+        font-size: 3rem;
+        border: .1rem solid $white-text;
+        border-radius: 100%;
+        color: $primary-color;
+        background-color: $white-text;
+        padding-right: .01rem;
+        padding-top: .01rem;
     }
-    .clockArea 
+}
+
+@media (min-width: 576px) /* Breakpoint for Small Devices and up */
+{
+    .toolkit-col
     {
-        left: 320px;
-        top: -600px;
-    
-        .clockHeight
+        margin-bottom: 3rem;
+    }
+}
+@media (min-width: 768px) /* Breakpoint for Medium Devices and up */
+{
+    .company-logo{ width: 75%; }
+    .about-img{ max-width: 75%; margin: 0; }
+    .left-content{ justify-content: flex-start; }
+    .right-content{ justify-content: flex-end; }
+    #pageContent { text-align: left; }
+
+    #contactAnch, #aboutAnch, #projectsAnch { top: -2rem; }
+    .proj-row
+    {
+        .proj-one, .proj-two
         {
-            width: 45px;
-            height: 45px;    
+            margin: 0;
+            background-size: 65%;
         }
+        .col-md-6
+        {   
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 47.5%;
+            flex: 0 0 47.5%;
+            max-width: 47.5%;
+        }
+    }
+    #overlayOne, #overlayTwo, #overlayThree, #overlayFour
+    {
+        h2{ font-size: 2rem; }
+        p, .project-btn{ font-size: 1rem; margin-bottom: .5rem; }
+    }
+    .coming-soon{ max-width: 100%; height: auto; display: block; }
+}
+@media (min-width: 992px) /* Breakpoint for Large Devices and up */
+{
+    header{ position: fixed; background: $body-color; }
+    footer{ position: static; background: $body-color; }
+    /* Header Nav CSS - START */
+    .hamburger, #mobileNav{ display: none; }
+    #desktopNav{ display: flex; }
+    .no-scroll{ overflow: visible; }
+    nav /* Nested CSS for Navigation Items */
+    {
+        .nav-item { width: auto; }
+        a 
+        { 
+            font-size: 1.2rem;
+            margin: 0 1rem;
+        }
+    }
+    /* Header Nav CSS - END */
+    #screenOverlay, #screenOverlay.active{ display: none; }
+    #pageContent{ top: 2rem; }
+    .company-logo{ margin-bottom: 0; }
+    .coming-soon{ width: 100%; }
+    .proj-row
+    {
+        margin-bottom: 3%;
+        .proj-one, .proj-two
+        {
+            min-height: 21rem;
+            width: 100%;
+        }
+    }
+    .about-img{ margin: 0; }
+    .w-100{ display: none; }
+
+    #overlayOne, #overlayTwo, #overlayThree, #overlayFour
+    {
+        p, .tool, .project-btn{ font-size: 1.2rem; }
+    }
+    .coming-soon{ margin: 0; }
+
+    .submit-container, .socialIcons{ text-align: left; }
+
+    #scrollToTopBtn
+    {
+        bottom: 1rem;
+        right: 1.5rem;
+        
+        i
+        {
+            top: 0;
+            -webkit-transition: top 0.3s ease-out;
+            -moz-transition: top 0.3s ease-out;
+            -ms-transition: top 0.3s ease-out;
+            -o-transition: top 0.3s ease-out;
+            transition: top 0.3s ease-out;
+            position: relative;
+        }
+        i:hover
+        {
+            box-shadow: 1px 1px 10px $white-text;
+            top: -.35rem;
+        }
+    }
+}
+@media (min-width: 1200px) /* Breakpoint for X-Large Devices and up */
+{
+    #overlayOne, #overlayTwo, #overlayThree, #overlayFour
+    {
+        padding: 3.5%;
+        h2{ font-size: 2.5rem; }
+        .project-links{ margin-top: .5rem; }
+        p, .project-btn{ margin-bottom: 1rem; }
     }
 }
