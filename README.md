@@ -23,7 +23,9 @@ from the top of the Game Area at a randomly generated horizontal position*.
 - When the Player Object touches a clock, the player's Timer goes up by 5, and the clock is reset to fall once again from the 
 top of the Game Area at a randomly generated horizontal position*. The clock is set to fall from a higher position thant the batteries,
 causing it to take longer to return to the visible Game Area.
+
 *Rather than continuously generate Item Objects, the code is set up in a way to constantly re-use the same set of 4.
+
 - When an Item Object reaches the bottom of the Game Area, it is reset similarly to how it is when it collides with the Player Object,
 but the Score Counter is not increased.
 - As the player earns more points, the speed at which Item Objects fall increases (at specific point intervals).
