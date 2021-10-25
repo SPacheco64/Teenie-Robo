@@ -8,7 +8,7 @@ from side to side, catching falling batteries & clocks before they hit the groun
 Tech Used: 
 - HTML5
 - SCSS 
-- Bootstrap 4 
+- Bootstrap
 - JavaScript 
 - jQuery
 
