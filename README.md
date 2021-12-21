@@ -1,6 +1,8 @@
 # Teenie-Robo
 A simple JavaScript game where the player tries to catch as many falling batteries as they can.
 
+Link: https://spacheco64.github.io/Teenie-Robo/
+
 Overview:
 This is a simple game built using JavaScript/jQuery that can be played on both Desktop & Mobile devices. The aim of the game is for the player to move their character
 from side to side, catching falling batteries & clocks before they hit the ground in order to get their score as high as they can before they run out of time.
